@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download File</title>
+</head>
+<body>
+    <h1>Download Example</h1>
+    <button id="downloadBtn">Download File</button>
+
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            // Create a temporary <a> element
+            const link = document.createElement('a');
+            link.href = '/download'; // URL to your download route
+            link.download = ''; // Optionally specify a filename
+
+            // Append the link to the body
+            document.body.appendChild(link);
+
+            // Programmatically click the link to trigger the download
+            link.click();
+
+            // Remove the link from the document
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>
